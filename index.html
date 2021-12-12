@@ -1,0 +1,90 @@
+<html>
+
+<head>
+
+  <style>
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    button {
+      font-size: 100px;
+      width: auto;
+    }
+
+    #bjp {
+      background-color: red;
+    }
+
+    #sp {
+      background-color: green;
+    }
+
+    #cong {
+      background-color: blue;
+    }
+
+    #bsp {
+      background-color: orange;
+    }
+    button{
+      border-radius: 50%;
+      margin-top: 10%;
+      padding: 2%;
+    }
+    #res{
+      border-radius: 0%;
+      margin-left: 40%;
+      margin-top: 8%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <button id="bjp" onclick="bjpf()">BJP</button>
+    <button id="cong" onclick="congress()">Cong</button>
+    <button id="sp" onclick="spa()">SP</button>
+    <button id="bsp" onclick="bspa()">BSP</button>
+  </div>
+
+  <button id="res" onclick="res()">Result</button>
+  <div id="result"></div>
+  <script>
+    let bjp = 0; let cong = 0; let bsp = 0; let sp = 0;
+    function bjpf() {
+      bjp = bjp + 1;
+     
+    }
+    function congress() {
+       cong+=1;
+    }
+
+    function spa() {
+      sp += 1;
+    }
+
+    function bspa() {
+      bsp = bsp + 1;
+    }
+    function res() {
+      if (sp > bjp && sp > cong && sp > bsp) {
+        alert(`Congratulation Samajbadi party has won got ${sp} votes`);
+      } else if (bjp > sp && bjp > cong && bjp > bsp) {
+        alert(`Congratulation Bhartiya Janta Party has won got ${bjp} votes`);
+      } else if (cong > bjp && cong > sp && cong > bsp) {
+        alert(`Congratulation Congress Party has won got ${cong} votes`);
+      }
+      else if(bsp>cong && bsp>sp && bsp>bjp){
+        alert(`Congratulation Bahujan Samaj Party has won got ${bsp} vote`);
+      }
+      else{
+        alert(`Either you have not voted to anyone or two parties has same number of votes`)
+      }
+    }
+  </script>
+</body>
+
+</html>
